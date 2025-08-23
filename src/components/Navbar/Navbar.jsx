@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import logo from '../assets/logo.png'
+import flexy1 from '../assets/flexy1.png'
 import profile_img from '../assets/profile_img.png'
 import bell_icon from '../assets/bell_icon.svg'
 import search_icon from '../assets/search_icon.svg'
@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className="Navbar">
       <div className="Navbar-left">
-        <img  src={logo} alt="logo" />
+        <img  src={flexy1} alt="logo" />
       </div>
 
       <div className="Navbar-middle">

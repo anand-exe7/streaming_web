@@ -1,4 +1,3 @@
-
 import card_img1 from './card1.jpg';
 import card_img2 from './card2.jpg';
 import card_img3 from './card3.jpg';
@@ -73,3 +72,4 @@ const cards_data = [
     },
 ]
 
+export default cards_data;
