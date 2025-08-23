@@ -4,7 +4,9 @@ import hero_banner from "./assets/assets/hero_banner.jpg"
 import hero_title from "./assets/assets/hero_title.png"
 import play_icon from "./assets/assets/play_icon.png"
 import info_icon from "./assets/assets/info_icon.png"
-import TittleCard from "./components/tittle-cards/tittle-card.jsx";
+import TitleCard from "./components/tittle-cards/TitleCard.jsx";
+
+
 
 
 
@@ -22,7 +24,7 @@ function App() {
             <button className="btn" ><img src={play_icon} alt="play_button"></img>Play</button>
             <button className="btn b-2" ><img src={info_icon} alt="info_button"></img>Info</button>
           </div>
-          <TittleCard />
+          <TitleCard />
         </div>
       </div>
     </div>
