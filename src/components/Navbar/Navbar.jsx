@@ -1,10 +1,10 @@
 import React from "react";
-import "./Navbar.css";
-import flexy1 from "../../assets/flexy1.png";
-import profile_img from '../../assets/profile_img.png'
-import bell_icon from '../../assets/bell_icon.svg'
-import search_icon from '../../assets/search_icon.svg'
-import caret_icon from '../../assets/caret_icon.svg'
+import './Navbar.css';
+import flexy1 from '../../assets/flexy1.png';
+import profile_img from '../../assets/profile_img.png';
+import bell_icon from '../../assets/bell_icon.svg';
+import search_icon from '../../assets/search_icon.svg';
+import caret_icon from '../../assets/caret_icon.svg';
 
 const Navbar = () => {
   return (
