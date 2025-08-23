@@ -1,0 +1,31 @@
+.Title{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.TitleCard {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.TitleCard::-webkit-scrollbar{
+    display: none;
+
+}
+.TitleCard img{
+   width: 400px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.TitleCard .card{
+    position: relative;
+}
+
+.TitleCard .card p{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}

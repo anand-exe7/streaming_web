@@ -1,24 +1,40 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './TitleCard.css';
-import Cards_data from '../../assets/cards/Cards_data';
+import cards_data from '../../assets/cards/Cards_data';
 
 const TitleCard = () => {
+
+ const cardRef = useRef();
+
+  useEffect(() => {
+  const ref = cardRef.current;
+  if (!ref) return;   // guard against null
+
+  const handleWheel = (event) => {
+    event.preventDefault();
+    ref.scrollLeft += event.deltaY;
+  };
+
+  ref.addEventListener('wheel', handleWheel);
+
+  return () => {
+    ref.removeEventListener('wheel', handleWheel);
+  };
+}, []);
+
+
+
   return (
-    <div className="title_card">
-        <h2>Popular On Flexy</h2>
-
-        <div className="list">
-           {Cards_data.map((card , index) => {
-            return (
-                <div className="card" key={index}>
-                    <img src={card_image} ></img>
-                    <p>{card.name}</p>
-
-                </div>
-            )
-           })}
+    <div className='Title'>
+      <h2>Popular On Flexy</h2>
+      <div className="TitleCard" ref={cardRef}>
+      {cards_data.map((card, index) => (
+        <div key={index} className="card">
+          <img src={card.image} alt={card.name} />
+          <p>{card.name}</p>
         </div>
-      
+      ))}
+    </div>
     </div>
   )
 }

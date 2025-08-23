@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './Navbar.css';
 import flexy1 from '../../assets/flexy1.png';
 import profile_img from '../../assets/profile_img.png';
@@ -7,6 +7,11 @@ import search_icon from '../../assets/search_icon.svg';
 import caret_icon from '../../assets/caret_icon.svg';
 
 const Navbar = () => {
+
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  
+
   return (
     <div className="Navbar">
       <div className="Navbar-left">
@@ -19,7 +24,15 @@ const Navbar = () => {
             <li>Movies</li>
             <li>Web-Service</li>
             <li>My List</li>
-            <img src={search_icon} alt="search" />
+             <div className={`search-container ${searchOpen ? "active" : ""}`}>
+        <input type="text" placeholder="Search..." />
+        <button
+          className="search-icon"
+          onClick={() => setSearchOpen(!searchOpen)}
+        >
+          <img src={search_icon} alt="Search" />
+        </button>
+      </div>
         </ul>
       </div>
 

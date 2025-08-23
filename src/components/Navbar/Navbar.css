@@ -28,11 +28,56 @@
     list-style: none;
 }
 
+
+
 .Navbar-middle ul li{
     
     cursor: pointer;
 
 }
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.search-container input {
+  width: 0;
+  opacity: 0;
+  padding: 8px;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  background: #222;
+  color: white;
+  font-size: 14px;
+}
+
+.search-container.active input {
+  width: 250px;              /* expands left */
+  opacity: 1;
+  margin-right: 10px;
+}
+
+.search-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.Navbar-middle img:hover{
+
+  transition: translateY(10px);
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
+  border-radius: 10px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+
+}
+
 .Navbar-right{
     display: flex;
     align-items: center;

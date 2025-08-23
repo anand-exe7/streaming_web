@@ -1,5 +1,5 @@
 import React from "react";
-import './index.css'
+import './index.css';
 import Navbar from "./components/Navbar/Navbar.jsx";
 import hero_banner from "./assets/assets/hero_banner.jpg";
 import hero_title from "./assets/assets/hero_title.png";
@@ -13,6 +13,7 @@ function App() {
     <div>
       <Navbar />
       <div className="Hero">
+        
         <img src={hero_banner} alt="img"></img>
         <div className="hero-title">
           <img src={hero_title}></img>
@@ -21,9 +22,11 @@ function App() {
             <button className="btn" ><img src={play_icon} alt="play_button"></img>Play</button>
             <button className="btn b-2" ><img src={info_icon} alt="info_button"></img>Info</button>
           </div>
-          <TitleCard />
+          
         </div>
+        <TitleCard />
       </div>
+      
     </div>
   );
 }
