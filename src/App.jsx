@@ -6,6 +6,7 @@ import hero_title from "./assets/assets/hero_title.png";
 import play_icon from "./assets/assets/play_icon.png";
 import info_icon from "./assets/assets/info_icon.png";
 import TitleCard from "./components/TitleCard/TitleCard.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 
 function App() {
@@ -26,7 +27,13 @@ function App() {
         </div>
         <TitleCard />
       </div>
-      
+      <div className="new-cards">
+        <TitleCard Title={"BlockBuster Movies"}/>
+        <TitleCard Title={"Only On Flexy"}/>
+        <TitleCard Title={"Best Picks For You"}/>
+        <TitleCard Title={"Trending Right Now "}/>
+      </div>
+      <Footer />
     </div>
   );
 }

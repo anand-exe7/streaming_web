@@ -20,6 +20,13 @@
     cursor: pointer;
 }
 
+.Title h2{
+
+    margin-top: 40px;
+    padding-bottom: 30px;
+    padding-left: 3%;
+
+}
 .TitleCard .card{
     position: relative;
 }
@@ -27,5 +34,11 @@
 .TitleCard .card p{
     position: absolute;
     bottom: 10px;
-    left: 10px;
+    left: 10%;
+    font-size: 17px;
+}
+
+.card img{
+    padding-left: 8%;
+    border-radius: 7px;
 }
