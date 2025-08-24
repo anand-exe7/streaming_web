@@ -1,0 +1,73 @@
+.Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  /* full screen */
+  background: url('/your-background.jpg') no-repeat center center/cover;
+  background-color: rgb(72% 36% 32%);
+    background-color: lch(51% 44 32);
+}
+
+/* Transparent Box */
+.Login-container {
+  background: rgba(0, 0, 0, 0.7); /* semi-transparent black box */
+  padding: 40px;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  color: white;
+}
+.Login-container h1{
+    padding: 10px;
+    margin-top: -70px;
+}
+
+.Login-container h2{
+    padding: 20px 15px;
+    color: #e50914;
+}
+/* Logo */
+.Login-container img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 200px;
+}
+
+/* Form */
+.Login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.Login-form input,
+.Login-form button {
+  padding: 12px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.Login-form button {
+  background: #e50914;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.Login-form button:hover {
+  background: #b00610;
+}
+
+.switch{
+    margin-top: 20px;
+    color: #737373;
+}
+
+.switch span{
+    font-weight: 500;
+    margin-left: 6px;
+    color: #fff;
+    cursor: pointer;
+}
