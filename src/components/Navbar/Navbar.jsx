@@ -33,6 +33,7 @@ const Navbar = () => {
           <img src={search_icon} alt="Search" />
         </button>
       </div>
+      
         </ul>
       </div>
 
