@@ -38,7 +38,7 @@ const Navbar = () => {
       </div>
 
       <div className="Navbar-right">
-        <p>children</p>
+        <p>childrens</p>
         <img className ="profile" src={profile_img} alt="profile" />
         <img src={caret_icon}></img>
         <img src={bell_icon} alt="bell" />
