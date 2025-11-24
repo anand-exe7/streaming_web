@@ -6,21 +6,7 @@ const TitleCard = ({Title , Catergory}) => {
 
  const cardRef = useRef();
 
-  useEffect(() => {
-  const ref = cardRef.current;
-  if (!ref) return;   // guard against null
 
-  const handleWheel = (event) => {
-    event.preventDefault();
-    ref.scrollLeft += event.deltaY;
-  };
-
-  ref.addEventListener('wheel', handleWheel);
-
-  return () => {
-    ref.removeEventListener('wheel', handleWheel);
-  };
-}, []);
 
 
 

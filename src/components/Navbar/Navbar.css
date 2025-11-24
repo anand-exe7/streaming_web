@@ -1,10 +1,9 @@
 .Navbar{
-    width: 100%;
     padding: 20px ;
+    align-items: center;
     display: flex;
-    justify-content: space-between ;
-    position: fixed;
-    font-size: 15px;
+    justify-content: space-around;
+     font-size: 15px;
  
 }
 .Navbar-left{
@@ -18,29 +17,32 @@
     margin-top: -10px;
 }
 
+.Navbar-middle {
+  display: flex;
+  justify-self: center;
+  text-align: center;
+}
+
 .Navbar-middle ul{
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
     padding: 20px;
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 23px;
     list-style: none;
 }
 
-
-
-.Navbar-middle ul li{
-    
+.Navbar-middle ul li{ 
     cursor: pointer;
-
 }
 
 .search-container {
   position: relative;
   display: flex;
-  align-items: center;
-  margin-left: auto;
+  justify-content: center;
+  
 }
 
 .search-container input {
@@ -58,7 +60,7 @@
 .search-container.active input {
   width: 250px;              /* expands left */
   opacity: 1;
-  margin-right: 10px;
+
 }
 
 .search-icon {
@@ -69,58 +71,14 @@
   cursor: pointer;
 }
 
-.Navbar-middle img:hover{
-
-  transition: translateY(10px);
-  box-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
-  border-radius: 10px;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-
+.Navbar-right {
+  display: flex;
+  gap: 15px;  
 }
 
-.Navbar-right{
-    display: flex;
-    align-items: center;
-    margin-top: -18px;
-    gap: 10px;
-
-
+.favourites{
+  background-color: #3F403F;
+  border-radius: 20px;
+  color: #ffffff;
 }
-.Navbar-right img {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-
-}
-
-.profile{
-    border-radius: 5px;
-}
-
-.Navbar-middle ul li {
-  transition: all 0.3s ease;
-  white-space: nowrap;
-
-}
-
-.Navbar-middle ul li:hover {
-  background-color: #e50914;
-  color: #ffffff; 
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); 
-  box-shadow: 0 0 15px rgba(229, 9, 20, 0.8); 
-  transform: scale(1.08);
-  border-radius: 10px;
-  text-align: center;
-  padding: 5px 12px;
-  font-size: 25px;
-  height: 100%;
-}
-
-.Navbar-middle ul li:hover + li {
-  transform: translateX(3px);
-}
-.Navbar-middle ul li:has(+ li:hover) {
-  transform: translateX(-3px);
-}
-
 
