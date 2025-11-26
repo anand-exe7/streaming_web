@@ -398,6 +398,11 @@ const ProfileSettings = () => {
               <Lock size={20} />
               <span>Security</span>
             </div>
+
+            <div
+              className={`sidebar-item ${activeTab === 'notifications' ? 'active' : ''}`}
+              onClick={() => setActiveTab('notifications')}
+            ></div>
            
           </div>
 
@@ -473,6 +478,38 @@ const ProfileSettings = () => {
                       onChange={handleInputChange}
                       placeholder="Confirm new password"
                     />
+                  </div>
+                </div>
+              </>
+            )}
+
+             {activeTab === 'notifications' && (
+              <>
+                <h2>Notification Preferences</h2>
+                <div className="section">
+                  <div className="toggle-option">
+                    <div className="toggle-info">
+                      <h4>Email Notifications</h4>
+                      <p>Receive updates about new releases and recommendations</p>
+                    </div>
+                    <div
+                      className={`toggle-switch ${preferences.emailNotifications ? 'active' : ''}`}
+                      onClick={() => handlePreferenceChange('emailNotifications', !preferences.emailNotifications)}
+                    >
+                      <div className="toggle-switch-circle"></div>
+                    </div>
+                  </div>
+                  <div className="toggle-option">
+                    <div className="toggle-info">
+                      <h4>Push Notifications</h4>
+                      <p>Get notified about new episodes and content</p>
+                    </div>
+                    <div
+                      className={`toggle-switch ${preferences.pushNotifications ? 'active' : ''}`}
+                      onClick={() => handlePreferenceChange('pushNotifications', !preferences.pushNotifications)}
+                    >
+                      <div className="toggle-switch-circle"></div>
+                    </div>
                   </div>
                 </div>
               </>
