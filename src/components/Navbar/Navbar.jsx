@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import './Navbar.css';
 import flexy1 from '../../assets/flexy1.png';
 import profile_img from '../../assets/profile_img.png';
 import bell_icon from '../../assets/bell_icon.svg';
 import search_icon from '../../assets/search_icon.svg';
 import caret_icon from '../../assets/caret_icon.svg';
-import {Heart , User } from 'lucide-react'
+import {ArrowBigDown, ArrowDown, ArrowDown10, ArrowDownNarrowWide, Heart , User } from 'lucide-react'
 
 const Navbar = () => {
 
   const [searchOpen, setSearchOpen] = useState(false);
-
+  const [profileOpen ,isProfileOpen] = useState(false);
   
 
   return (
@@ -29,7 +29,7 @@ const Navbar = () => {
         <input type="text" placeholder="Search..." />
         <button
           className="search-icon"
-          onClick={() => setSearchOpen(!searchOpen)}
+          onClick={() => setSearchOpen(prev => !prev)}
         >
           <img src={search_icon} alt="Search" />
         </button>
@@ -40,13 +40,38 @@ const Navbar = () => {
 
       <div className="Navbar-right">
         <div className="favourites">
-          <Heart/>
-          Favourite
+          <Heart className="heart"/>
+        
         </div>
 
-        <div className="profile">
-          <User/>
+        <button onClick={() => isProfileOpen((prev) => !prev)}>
+          <div className="profile">
+          <User className="user"/>
+          Anand 
+          Premium
+          
+           
         </div>
+          </button>
+
+        
+        {profileOpen && (
+            <div className="profile-down">
+          
+              <div className="profile-down-sep" />
+
+              <button className="profile-down-content">Profile</button>
+              <button className="profile-down-content">Settings</button>
+
+              <div className="logout-item"> <button className="logout-item">
+                Log-out
+              </button></div>
+
+
+             
+    
+            </div>
+          )}
       </div>
 
 
