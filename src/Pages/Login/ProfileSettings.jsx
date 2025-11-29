@@ -399,10 +399,36 @@ const ProfileSettings = () => {
               <span>Security</span>
             </div>
 
+
+
             <div
               className={`sidebar-item ${activeTab === 'notifications' ? 'active' : ''}`}
               onClick={() => setActiveTab('notifications')}
-            ></div>
+            >
+              <Bell size={20} />
+              <span>Notifications</span>
+            </div>
+            <div
+              className={`sidebar-item ${activeTab === 'subscription' ? 'active' : ''}`}
+              onClick={() => setActiveTab('subscription')}
+            >
+              <CreditCard size={20} />
+              <span>Subscription</span>
+            </div>
+            <div
+              className={`sidebar-item ${activeTab === 'playback' ? 'active' : ''}`}
+              onClick={() => setActiveTab('playback')}
+            >
+              <Monitor size={20} />
+              <span>Playback</span>
+            </div>
+            <div
+              className={`sidebar-item ${activeTab === 'language' ? 'active' : ''}`}
+              onClick={() => setActiveTab('language')}
+            >
+              <Languages size={20} />
+              <span>Language</span>
+            </div>
            
           </div>
 
@@ -515,6 +541,129 @@ const ProfileSettings = () => {
               </>
             )}
 
+             {activeTab === 'notifications' && (
+              <>
+                <h2>Notification Preferences</h2>
+                <div className="section">
+                  <div className="toggle-option">
+                    <div className="toggle-info">
+                      <h4>Email Notifications</h4>
+                      <p>Receive updates about new releases and recommendations</p>
+                    </div>
+                    <div
+                      className={`toggle-switch ${preferences.emailNotifications ? 'active' : ''}`}
+                      onClick={() => handlePreferenceChange('emailNotifications', !preferences.emailNotifications)}
+                    >
+                      <div className="toggle-switch-circle"></div>
+                    </div>
+                  </div>
+                  <div className="toggle-option">
+                    <div className="toggle-info">
+                      <h4>Push Notifications</h4>
+                      <p>Get notified about new episodes and content</p>
+                    </div>
+                    <div
+                      className={`toggle-switch ${preferences.pushNotifications ? 'active' : ''}`}
+                      onClick={() => handlePreferenceChange('pushNotifications', !preferences.pushNotifications)}
+                    >
+                      <div className="toggle-switch-circle"></div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+
+            {activeTab === 'subscription' && (
+              <>
+                <h2>Subscription & Billing</h2>
+                <div className="section">
+                  <div className="plan-card">
+                    <div className="plan-header">
+                      <h4>Premium Plan</h4>
+                      <span className="plan-badge">Active</span>
+                    </div>
+                    <div className="plan-details">
+                      <p>• 4K Ultra HD streaming</p>
+                      <p>• Watch on 4 devices simultaneously</p>
+                      <p>• Download on 4 devices</p>
+                      <p>• Next billing date: January 15, 2026</p>
+                      <p>• Monthly charge: $15.99</p>
+                    </div>
+                  </div>
+                  <div className="btn-container">
+                    <button className="btn-secondary">Change Plan</button>
+                    <button className="btn-secondary">Cancel Subscription</button>
+                  </div>
+                </div>
+              </>
+            )}
+
+            {activeTab === 'playback' && (
+              <>
+                <h2>Playback Settings</h2>
+                <div className="section">
+                  <div className="toggle-option">
+                    <div className="toggle-info">
+                      <h4>Autoplay Next Episode</h4>
+                      <p>Automatically play the next episode in a series</p>
+                    </div>
+                    <div
+                      className={`toggle-switch ${preferences.autoPlay ? 'active' : ''}`}
+                      onClick={() => handlePreferenceChange('autoPlay', !preferences.autoPlay)}
+                    >
+                      <div className="toggle-switch-circle"></div>
+                    </div>
+                  </div>
+                  <div className="select-group">
+                    <label>Video Quality</label>
+                    <select
+                      value={preferences.dataUsage}
+                      onChange={(e) => handlePreferenceChange('dataUsage', e.target.value)}
+                    >
+                      <option value="low">Low (SD - 0.3 GB/hour)</option>
+                      <option value="medium">Medium (HD - 1 GB/hour)</option>
+                      <option value="high">High (4K - 3 GB/hour)</option>
+                      <option value="auto">Auto</option>
+                    </select>
+                  </div>
+                </div>
+              </>
+            )}
+
+            {activeTab === 'language' && (
+              <>
+                <h2>Language & Subtitle Settings</h2>
+                <div className="section">
+                  <div className="select-group">
+                    <label>Display Language</label>
+                    <select
+                      value={preferences.language}
+                      onChange={(e) => handlePreferenceChange('language', e.target.value)}
+                    >
+                      <option value="english">English</option>
+                      <option value="spanish">Spanish</option>
+                      <option value="french">French</option>
+                      <option value="german">German</option>
+                      <option value="japanese">Japanese</option>
+                    </select>
+                  </div>
+                  <div className="select-group">
+                    <label>Subtitle Preferences</label>
+                    <select
+                      value={preferences.subtitles}
+                      onChange={(e) => handlePreferenceChange('subtitles', e.target.value)}
+                    >
+                      <option value="off">Off</option>
+                      <option value="english">English</option>
+                      <option value="spanish">Spanish</option>
+                      <option value="french">French</option>
+                      <option value="auto">Auto (Match Audio)</option>
+                    </select>
+                  </div>
+                </div>
+              </>
+            )}
+
 
             <div className="btn-container">
               <button className="btn-primary" onClick={handleSave}>
@@ -526,7 +675,7 @@ const ProfileSettings = () => {
           </div>
         </div>
       </div>
-    </>
+    </> 
   );
 };
 
